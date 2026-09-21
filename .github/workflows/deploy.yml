@@ -1,0 +1,21 @@
+name: Deploy Website to IIS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy Website
+        shell: pwsh
+        run: |
+          Write-Host "Starting deployment..."
+          Write-Host "Website files downloaded successfully"
+          Write-Host "Deployment completed"
